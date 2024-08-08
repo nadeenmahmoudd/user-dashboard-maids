@@ -1,0 +1,18 @@
+
+<div class="container  bg-light ">
+    <header class="d-flex justify-content-center fw-bold">Welcome to User dashboard</header>
+    <input type="text" class="form-control my-3 w-50 mx-auto   " [(ngModel)]="searchTerm" placeholder=" search..."> 
+
+    <div *ngFor="let user of users | filter:searchTerm"   style="display:grid ; place-items: center;" >
+        <img [src]="user.avatar" alt="{{ user.first_name }}" class="cardd" style="border-radius: 4px;"
+        (click)="onSelect(user.id)" >  
+        <!-- we also can use routerLink for navigating to user details  -->
+        <div>
+          <h3 class="m-2 text-dark bg-light p-2">  {{ user.first_name }} {{ user.last_name }}</h3>
+          <hr>
+        </div>
+      </div>
+      <mat-paginator [length]="totalUsers" [pageSize]="usersPerPage" 
+      [pageSizeOptions]="[6, 12, 18]" (page)="onPageChange($event)">
+    </mat-paginator>
+</div>

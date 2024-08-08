@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; 
+   /* background-image: ; */
+ }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+    --main-color: rgb(84, 170, 240) ;
+    --light-color: #f0f3f2;
+    --text-color:#1c1c1c;
+    --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+
+}
+.cardd:hover {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+}
